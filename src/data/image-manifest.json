@@ -1,0 +1,79 @@
+[
+  {
+    "id": "hero",
+    "filename": "inner-mirror-hero.webp",
+    "path": "/images/hero/inner-mirror-hero.webp",
+    "title": "Inner Mirror Bliss Sanctuary",
+    "description": "Luxurious arrangement of tarot cards, amethyst crystals, lavender flowers, gold celestial ornaments and ivory candles",
+    "alt": "Luxurious spiritual arrangement of tarot cards, amethyst crystals, lavender blossoms, and ivory candles",
+    "category": "hero",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "id": "tarot",
+    "filename": "tarot-reading-session.webp",
+    "path": "/images/services/tarot-reading-session.webp",
+    "title": "Tarot Card Reading Session",
+    "description": "Realistic tarot reading table layout with velvet cloth and brass accents",
+    "alt": "Realistic intuitive tarot card consultation layout with velvet cloth and crystals",
+    "category": "services",
+    "width": 1200,
+    "height": 800
+  },
+  {
+    "id": "crystal",
+    "filename": "crystal-healing-amethyst.webp",
+    "path": "/images/services/crystal-healing-amethyst.webp",
+    "title": "Crystal Healing & Chakra Balancing",
+    "description": "Amethyst geode cluster, rose quartz, and clear quartz healing crystals on linen",
+    "alt": "Natural amethyst crystal geode, rose quartz, and clear quartz healing gemstones on ivory linen",
+    "category": "services",
+    "width": 1200,
+    "height": 800
+  },
+  {
+    "id": "aura",
+    "filename": "aura-cleansing.webp",
+    "path": "/images/services/aura-cleansing.webp",
+    "title": "Aura Cleansing Biofield Purification",
+    "description": "Peaceful meditation and soft spiritual atmosphere with incense curls and warm light",
+    "alt": "Soft spiritual aura cleansing atmosphere with gentle sacred smoke and golden morning light",
+    "category": "services",
+    "width": 1200,
+    "height": 800
+  },
+  {
+    "id": "reiki-facial",
+    "filename": "reiki-healing-facial.webp",
+    "path": "/images/services/reiki-healing-facial.webp",
+    "title": "Reiki Healing Facial Rejuvenation",
+    "description": "Authentic spa relaxation setting with organic botanical face care and jade roller",
+    "alt": "Tranquil holistic facial wellness and Reiki treatment setting with botanical oils and quartz roller",
+    "category": "services",
+    "width": 1200,
+    "height": 800
+  },
+  {
+    "id": "emotional-healing",
+    "filename": "emotional-healing.webp",
+    "path": "/images/services/emotional-healing.webp",
+    "title": "Emotional Healing & Stress Release",
+    "description": "Warm, comforting emotional sanctuary setting with tea cup and journal",
+    "alt": "Comforting emotional healing atmosphere with warm tea, soft journal, and peaceful light",
+    "category": "services",
+    "width": 1200,
+    "height": 800
+  },
+  {
+    "id": "angel-card",
+    "filename": "angel-card-reading.webp",
+    "path": "/images/services/angel-card-reading.webp",
+    "title": "Angelic Healing & Angel Card Guidance",
+    "description": "Elegant celestial artwork with ethereal feather, angel cards, and golden sunbeams",
+    "alt": "Ethereal angelic feather and consecrated oracle cards bathed in warm celestial sunbeams",
+    "category": "services",
+    "width": 1200,
+    "height": 800
+  }
+]

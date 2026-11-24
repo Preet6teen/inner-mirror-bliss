@@ -7,7 +7,7 @@ import { Section } from "@/components/ui/Section";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { initialServices, getServiceBySlug, getRelatedServices } from "@/config/services";
-import { formatINR, formatDuration } from "@/lib/utils";
+import { formatINR, formatDuration, getAssetPath } from "@/lib/utils";
 import {
   Clock,
   Check,
@@ -134,7 +134,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               {service.imageUrl && (
                 <div className="relative w-full h-[320px] sm:h-[440px] rounded-3xl overflow-hidden border border-primary/10 shadow-card bg-lavender-light/40">
                   <Image
-                    src={service.imageUrl}
+                    src={getAssetPath(service.imageUrl)}
                     alt={service.title}
                     fill
                     priority

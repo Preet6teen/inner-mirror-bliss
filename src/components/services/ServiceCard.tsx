@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { formatINR, formatDuration, cn } from "@/lib/utils";
+import { formatINR, formatDuration, getAssetPath, cn } from "@/lib/utils";
 import { Service } from "@/types";
 import { Clock, Check, Sparkles, ArrowRight } from "lucide-react";
 import { PrimaryButton, GoldButton } from "@/components/ui/Buttons";
@@ -35,7 +35,7 @@ export function ServiceCard({ service, featured = false, className }: ServiceCar
         {service.imageUrl && (
           <div className="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden mb-6 bg-lavender-light/50">
             <Image
-              src={service.imageUrl}
+              src={getAssetPath(service.imageUrl)}
               alt={service.title}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

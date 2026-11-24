@@ -11,6 +11,7 @@ import { Calendar, Clock, User, ArrowLeft, ArrowRight, Sparkles, Share2, Heart }
 import { GoldButton, PrimaryButton } from "@/components/ui/Buttons";
 import { BookingCTA } from "@/components/sections/BookingCTA";
 import { siteConfig } from "@/config/site";
+import { getAssetPath } from "@/lib/utils";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -114,7 +115,7 @@ export default async function BlogPostDetailPage({ params }: BlogPostPageProps) 
             {/* Featured Image */}
             <div className="relative w-full h-[320px] sm:h-[450px] rounded-3xl overflow-hidden border border-primary/10 shadow-card bg-lavender-light/40">
               <Image
-                src={post.imageUrl}
+                src={getAssetPath(post.imageUrl)}
                 alt={post.title}
                 fill
                 priority
@@ -188,7 +189,7 @@ export default async function BlogPostDetailPage({ params }: BlogPostPageProps) 
             <div className="p-6 sm:p-8 rounded-3xl bg-lavender-light/40 border border-primary/15 flex flex-col sm:flex-row items-center gap-6">
               <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-gold shrink-0 bg-white">
                 <Image
-                  src="/images/services/tarot-reading-session.webp"
+                  src={getAssetPath("/images/services/tarot-reading-session.webp")}
                   alt="Deepika"
                   fill
                   className="object-cover"

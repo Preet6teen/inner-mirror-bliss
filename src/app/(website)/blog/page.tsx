@@ -9,6 +9,7 @@ import { BookingCTA } from "@/components/sections/BookingCTA";
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, Calendar, Clock, ArrowRight, User } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "The Sacred Mirror Blog | Tarot, Reiki & Spiritual Wellness Articles",
@@ -61,7 +62,7 @@ export default function BlogListingPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-6 relative w-full h-72 sm:h-96 rounded-3xl overflow-hidden border border-primary/10 bg-lavender-light/30">
                   <Image
-                    src={featuredPost.imageUrl}
+                    src={getAssetPath(featuredPost.imageUrl)}
                     alt={featuredPost.title}
                     fill
                     priority

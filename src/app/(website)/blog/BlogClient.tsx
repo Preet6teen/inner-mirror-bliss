@@ -5,7 +5,7 @@ import { BlogPost } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { Search, Clock, Calendar, ArrowRight, User, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 
 interface BlogClientProps {
   initialPosts: BlogPost[];
@@ -80,7 +80,7 @@ export function BlogClient({ initialPosts }: BlogClientProps) {
               {/* Post Thumbnail */}
               <div className="relative w-full h-52 overflow-hidden bg-lavender-light/40">
                 <Image
-                  src={post.imageUrl}
+                  src={getAssetPath(post.imageUrl)}
                   alt={post.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"

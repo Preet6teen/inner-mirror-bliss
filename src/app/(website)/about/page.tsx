@@ -8,6 +8,8 @@ import { siteConfig, getWhatsAppBookingUrl } from "@/config/site";
 import { GoldButton, PrimaryButton, SecondaryButton } from "@/components/ui/Buttons";
 import { BookingCTA } from "@/components/sections/BookingCTA";
 import { initialServices } from "@/config/services";
+import { ServiceCarousel } from "@/components/services/ServiceCarousel";
+import { getAssetPath } from "@/lib/utils";
 import {
   Sparkles,
   Heart,
@@ -77,7 +79,7 @@ export default function AboutPage() {
             <div className="lg:col-span-6 relative">
               <div className="relative w-full h-[400px] sm:h-[480px] rounded-3xl overflow-hidden border border-gold/30 shadow-card bg-lavender-light/40">
                 <Image
-                  src="/images/hero/inner-mirror-bliss-altar.webp"
+                  src={getAssetPath("/images/hero/inner-mirror-hero.webp")}
                   alt="Inner Mirror Bliss sacred sanctuary space with crystals, candles, and spiritual wellness elements"
                   fill
                   priority
@@ -148,7 +150,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5 order-1 lg:order-2">
               <div className="relative w-full h-[450px] sm:h-[520px] rounded-3xl overflow-hidden border-2 border-gold/40 shadow-card bg-white">
                 <Image
-                  src="/images/services/tarot-reading-session.webp"
+                  src={getAssetPath("/images/services/tarot-reading-session.webp")}
                   alt="Deepika in her Ghansoli spiritual studio arranging tarot cards with crystals"
                   fill
                   className="object-cover"
@@ -297,36 +299,8 @@ export default function AboutPage() {
             align="center"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            {initialServices.slice(0, 4).map((service) => (
-              <div
-                key={service.id}
-                className="p-6 rounded-3xl bg-ivory/60 border border-primary/10 shadow-soft hover:shadow-card transition-all flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-primary">
-                    {service.displayCategory}
-                  </span>
-                  <h3 className="font-serif text-xl font-bold text-plum">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs text-body leading-relaxed line-clamp-3 font-sans">
-                    {service.shortDescription}
-                  </p>
-                </div>
-                <div className="pt-6 border-t border-primary/10 mt-6 flex items-center justify-between">
-                  <span className="font-serif text-xl font-bold text-plum">
-                    ₹{service.price}
-                  </span>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-xs font-bold text-primary hover:text-plum inline-flex items-center gap-1 font-sans"
-                  >
-                    Details <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
+          <div className="mt-12">
+            <ServiceCarousel services={initialServices} showCategoryFilter={false} />
           </div>
 
           <div className="mt-8 text-center">

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 
 export interface BlogCardProps {
   post: {
@@ -11,6 +11,7 @@ export interface BlogCardProps {
     excerpt: string;
     category: string;
     coverImageUrl?: string;
+    imageUrl?: string;
     readingTimeMinutes?: number;
     publishedAt?: string;
     authorName?: string;
@@ -19,6 +20,8 @@ export interface BlogCardProps {
 }
 
 export function BlogCard({ post, className }: BlogCardProps) {
+  const displayImage = post.coverImageUrl || post.imageUrl;
+
   return (
     <article
       className={cn(
@@ -26,10 +29,10 @@ export function BlogCard({ post, className }: BlogCardProps) {
         className
       )}
     >
-      {post.coverImageUrl && (
+      {displayImage && (
         <div className="relative w-full h-52 sm:h-56 bg-lavender-light/40 overflow-hidden">
           <Image
-            src={post.coverImageUrl}
+            src={getAssetPath(displayImage)}
             alt={post.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

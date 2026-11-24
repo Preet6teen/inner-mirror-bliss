@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PrimaryButton, SecondaryButton, GoldButton } from "@/components/ui/Buttons";
 import { ServiceCard } from "@/components/services/ServiceCard";
+import { ServiceCarousel } from "@/components/services/ServiceCarousel";
 import { DecorativeDivider } from "@/components/ui/DecorativeDivider";
 import { FloatingDecoration } from "@/components/animations/FloatingDecoration";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
@@ -14,7 +15,7 @@ import { TestimonialCarousel } from "@/components/testimonials/TestimonialCarous
 import { ContactCard } from "@/components/ui/ContactCard";
 import { siteConfig, getWhatsAppBookingUrl } from "@/config/site";
 import { initialServices } from "@/config/services";
-import { formatINR } from "@/lib/utils";
+import { formatINR, getAssetPath } from "@/lib/utils";
 import {
   Sparkles,
   ArrowRight,
@@ -328,7 +329,7 @@ export default function HomePage() {
                 {/* Hero Image Container */}
                 <div className="relative w-full h-[380px] sm:h-[480px] lg:h-[540px] rounded-4xl overflow-hidden border-2 border-gold/40 shadow-floating bg-lavender-light/50">
                   <Image
-                    src="/images/hero/inner-mirror-hero.webp"
+                    src={getAssetPath("/images/hero/inner-mirror-hero.webp")}
                     alt="Luxurious spiritual arrangement of tarot cards, amethyst crystals, lavender blossoms, and ivory candles"
                     fill
                     priority
@@ -353,7 +354,7 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative order-2 lg:order-1">
               <div className="relative w-full h-[400px] sm:h-[460px] rounded-3xl overflow-hidden border border-primary/15 shadow-card bg-ivory">
                 <Image
-                  src="/images/services/tarot-reading-session.webp"
+                  src={getAssetPath("/images/services/tarot-reading-session.webp")}
                   alt="Peaceful tarot reading sanctuary table at Inner Mirror Bliss"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -414,16 +415,8 @@ export default function HomePage() {
             size="large"
           />
 
-          {/* 8 Services Grid: 2 cols desktop & tablet for spacious, editorial readability */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {initialServices.map((service, index) => (
-              <ServiceCard
-                key={service.id}
-                service={service}
-                featured={index === 0}
-              />
-            ))}
-          </div>
+          {/* 8 Services Interactive Carousel: 2 per slide on desktop, 1 on mobile */}
+          <ServiceCarousel services={initialServices} />
 
           {/* Bottom Explore All CTA */}
           <div className="mt-14 text-center">
@@ -565,7 +558,7 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative">
               <div className="relative w-full h-[440px] sm:h-[480px] rounded-4xl overflow-hidden border-2 border-gold/40 shadow-card bg-lavender-light/40">
                 <Image
-                  src="/images/services/tarot-reading-session.webp"
+                  src={getAssetPath("/images/services/tarot-reading-session.webp")}
                   alt="Deepika conducting a spiritual tarot consultation at Inner Mirror Bliss"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -687,7 +680,7 @@ export default function HomePage() {
             <div className="bg-white rounded-3xl overflow-hidden border border-primary/10 shadow-card flex flex-col sm:flex-row">
               <div className="relative w-full sm:w-2/5 h-56 sm:h-auto min-h-[200px] bg-lavender-light/40">
                 <Image
-                  src="/images/services/reiki-healing-facial.webp"
+                  src={getAssetPath("/images/services/reiki-healing-facial.webp")}
                   alt="Reiki Healing Facial holistic botanical relaxation"
                   fill
                   sizes="(max-width: 768px) 100vw, 30vw"
@@ -719,7 +712,7 @@ export default function HomePage() {
             <div className="bg-white rounded-3xl overflow-hidden border border-primary/10 shadow-card flex flex-col sm:flex-row">
               <div className="relative w-full sm:w-2/5 h-56 sm:h-auto min-h-[200px] bg-lavender-light/40">
                 <Image
-                  src="/images/services/crystal-healing-amethyst.webp"
+                  src={getAssetPath("/images/services/crystal-healing-amethyst.webp")}
                   alt="Crystal Healing and chakra alignment with natural gemstones"
                   fill
                   sizes="(max-width: 768px) 100vw, 30vw"
@@ -751,7 +744,7 @@ export default function HomePage() {
             <div className="bg-white rounded-3xl overflow-hidden border border-primary/10 shadow-card flex flex-col sm:flex-row">
               <div className="relative w-full sm:w-2/5 h-56 sm:h-auto min-h-[200px] bg-lavender-light/40">
                 <Image
-                  src="/images/services/aura-cleansing.webp"
+                  src={getAssetPath("/images/services/aura-cleansing.webp")}
                   alt="Aura cleansing and energy purification atmosphere"
                   fill
                   sizes="(max-width: 768px) 100vw, 30vw"
@@ -783,7 +776,7 @@ export default function HomePage() {
             <div className="bg-white rounded-3xl overflow-hidden border border-primary/10 shadow-card flex flex-col sm:flex-row">
               <div className="relative w-full sm:w-2/5 h-56 sm:h-auto min-h-[200px] bg-lavender-light/40">
                 <Image
-                  src="/images/services/reiki-healing-body-massage.webp"
+                  src={getAssetPath("/images/services/reiki-healing-body-massage.webp")}
                   alt="Reiki Healing Body Massage relaxation session"
                   fill
                   sizes="(max-width: 768px) 100vw, 30vw"
@@ -849,7 +842,7 @@ export default function HomePage() {
                 className="group relative h-48 sm:h-56 rounded-2xl overflow-hidden border border-primary/10 shadow-soft bg-lavender-light/40"
               >
                 <Image
-                  src={item.src}
+                  src={getAssetPath(item.src)}
                   alt={item.alt}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"

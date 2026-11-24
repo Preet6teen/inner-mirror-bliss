@@ -42,3 +42,17 @@ export function generateBookingReference(): string {
   }
   return result;
 }
+
+/**
+ * Resolves static asset paths with the GitHub Pages basePath (/inner-mirror-bliss)
+ */
+export function getAssetPath(src: string): string {
+  if (!src) return src;
+  if (src.startsWith("http://") || src.startsWith("https://") || src.startsWith("data:")) {
+    return src;
+  }
+  const basePath = "/inner-mirror-bliss";
+  const clean = src.startsWith("/") ? src : `/${src}`;
+  if (clean.startsWith(basePath)) return clean;
+  return `${basePath}${clean}`;
+}
